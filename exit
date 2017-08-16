@@ -1,0 +1,4 @@
+[0GError: there was a problem executing system command: quit
+SyntaxError: unexpected $undefined, expecting end-of-input
+\quit
+ ^

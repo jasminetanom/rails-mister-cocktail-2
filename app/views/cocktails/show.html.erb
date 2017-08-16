@@ -5,16 +5,21 @@
   <%= @cocktail.name %>
 </p>
 
+<%= cl_image_tag(@cocktail.photo, :width=>200, :height=>200, :crop=>"fit") %>
+
 <p>Ingredients:</p>
 <% unless @cocktail.doses.any? %>
   <%= "None added yet" %>
 <% end %>
 <ul>
   <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.ingredient.name %><%= link_to 'Delete', dose, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <li>
+      <%= dose.ingredient.name %>
+      <%= image_tag(dose.ingredient.photo, {:width=>200, :height=>200, :crop=>"fit"}) %>
+      <%= link_to 'Delete', dose, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
   <% end %>
 </ul>
 
-<%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail) %>
-<%= link_to 'Back', cocktails_path %>
 
+<%= link_to 'Back', cocktails_path %>

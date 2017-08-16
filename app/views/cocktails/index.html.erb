@@ -1,25 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Cocktails</h1>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://www.outincanberra.com.au/wp-content/uploads/2017/03/New-Gin-cocktails-banner.jpeg');">
+  <div class="banner-content">
+    <h1>Treat Yourself</h1>
+    <p>Discover Classic Cocktail Concoctions</p>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container">
+  <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <tr>
-        <td><%= link_to cocktail.name, cocktail_path(cocktail) %></td>
-        <td><%= link_to 'Show', cocktail %></td>
-      </tr>
+      <%= link_to cocktail do %>
+      <div class="col-xs-12 col-sm-4" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path cocktail.photo, width: 250, height: 250, crop: "fit" %>'), height: 250px, width: 250px" >
+
+        <div class="banner-content">
+          <p><%= cocktail.name %></p>
+        </div>
+      </div>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
+    </div>
+  </div>
+</div>
 
-<br>
-
-<%= link_to 'New Cocktail', new_cocktail_path %>

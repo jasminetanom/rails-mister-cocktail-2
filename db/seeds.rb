@@ -16,5 +16,5 @@ url = 'http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 db_serialized = open(url).read
 db = JSON.parse(db_serialized)
 drinks = db["drinks"]
-ingredients_array = drinks.map { |ingredient_hash| { name: ingredient_hash["strIngredient1"].strip } }
+ingredients_array = drinks.map { |ingredient_hash| { name: ingredient_hash["strIngredient1"].strip, photo: "http://www.thecocktaildb.com/images/ingredients/" + ingredient_hash["strIngredient1"].strip + "-Medium.png" } }
 ingredients = Ingredient.create(ingredients_array)

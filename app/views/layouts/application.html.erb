@@ -9,7 +9,30 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body>
+    <div class="navbar-wagon">
+      <div class="navbar-wagon-left">
+        <h3>Miss Cocktail</h3>
+      </div>
+      <div class="navbar-wagon-right">
+        <%= link_to 'New Cocktail', new_cocktail_path, { class: "btn btn-primary" } %>
+      </div>
+    </div>
+
     <%= yield %>
+
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#"><i class="fa fa-github"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+      </div>
+      <div class="footer-copyright">
+        This footer is made with <i class="fa fa-heart"></i> at Le Wagon
+      </div>
+    </div>
+
     <%= javascript_include_tag 'application' %>
   </body>
 </html>

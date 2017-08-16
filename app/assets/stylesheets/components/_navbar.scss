@@ -5,9 +5,9 @@
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
 }
 
 /* Logo */
@@ -24,9 +24,19 @@
 
 /* Right section */
 .navbar-wagon-right {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  float: right;
+  margin-top: 15px;
+  // display: flex;
+  // align-items: content;
+  // justify-content: flex-end;
+}
+
+.navbar-wagon-left {
+  float: left;
+  // margin-top: 15px;
+  // display: flex;
+  // align-items: content;
+  // justify-content: flex-end;
 }
 
 /* Basic navbar item */
